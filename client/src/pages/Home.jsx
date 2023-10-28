@@ -117,7 +117,7 @@ export default function Home() {
 					<div className=''>
 						<div className='my-3 flex items-center justify-between max-w-[1450px] mx-auto mb-3'>
 							<h2 className='text-2xl font-semibold text-mern-text'>
-								Recent offers
+								Recent for Rent
 							</h2>
 							<Link
 								className='font-semibold flex justify-center items-center gap-2 text-blue-800 hover:underline'
@@ -139,7 +139,7 @@ export default function Home() {
 					<div className=''>
 						<div className='my-3 flex items-center justify-between max-w-[1450px] mx-auto mb-3'>
 							<h2 className='text-2xl font-semibold text-mern-text'>
-								Recent offers
+								Recent For Sale
 							</h2>
 							<Link
 								className='font-semibold flex justify-center items-center gap-2 text-blue-800 hover:underline'
