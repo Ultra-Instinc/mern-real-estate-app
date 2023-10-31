@@ -36,7 +36,7 @@ export default function UpdateListing() {
 		const fetchListing = async () => {
 			const listingId = params.listingId;
 			const res = await fetch(
-				`https://mern-real-estate-903l.onrender.com/api/listing/get/${listingId}`,
+				`https://mern-real-estate-qb4p.onrender.com/api/listing/get/${listingId}`,
 				{
 					method: "GET",
 					credentials: "include",
@@ -150,7 +150,7 @@ export default function UpdateListing() {
 			setLoading(true);
 			setError(false);
 			const res = await fetch(
-				`https://mern-real-estate-903l.onrender.com/api/listing/update/${params.listingId}`,
+				`https://mern-real-estate-qb4p.onrender.com/api/listing/update/${params.listingId}`,
 				{
 					method: "POST",
 					headers: {

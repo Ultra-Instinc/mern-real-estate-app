@@ -53,7 +53,7 @@ export default function Search() {
 			setShowMore(false);
 			const searchQuery = urlParams.toString();
 			const res = await fetch(
-				`https://mern-real-estate-903l.onrender.com/api/listing/get?${searchQuery}`
+				`https://mern-real-estate-qb4p.onrender.com/api/listing/get?${searchQuery}`
 			);
 			const data = await res.json();
 			if (data.length > 8) {
@@ -123,7 +123,7 @@ export default function Search() {
 		urlParams.set("startIndex", startIndex);
 		const searchQuery = urlParams.toString();
 		const res = await fetch(
-			`https://mern-real-estate-903l.onrender.com/api/listing/get?${searchQuery}`
+			`https://mern-real-estate-qb4p.onrender.com/api/listing/get?${searchQuery}`
 		);
 		const data = await res.json();
 		if (data.length < 9) {

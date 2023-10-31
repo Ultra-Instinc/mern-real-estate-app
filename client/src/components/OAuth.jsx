@@ -15,7 +15,7 @@ export default function OAuth() {
 			const result = await signInWithPopup(auth, provider);
 
 			const res = await fetch(
-				`https://mern-real-estate-903l.onrender.com/api/auth/google`,
+				`https://mern-real-estate-qb4p.onrender.com/api/auth/google`,
 				{
 					method: "POST",
 					credentials: "include",

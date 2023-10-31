@@ -79,7 +79,7 @@ export default function Profile() {
 		try {
 			dispatch(updateUserStart());
 			const res = await fetch(
-				`https://mern-real-estate-903l.onrender.com/api/user/update/${currentUser._id}`,
+				`https://mern-real-estate-qb4p.onrender.com/api/user/update/${currentUser._id}`,
 				{
 					method: "POST",
 					credentials: "include",
@@ -105,7 +105,7 @@ export default function Profile() {
 		try {
 			dispatch(deleteUserStart());
 			const res = await fetch(
-				`https://mern-real-estate-903l.onrender.com/api/user/delete/${currentUser._id}`,
+				`https://mern-real-estate-qb4p.onrender.com/api/user/delete/${currentUser._id}`,
 				{
 					method: "DELETE",
 					credentials: "include",
@@ -125,7 +125,7 @@ export default function Profile() {
 		try {
 			dispatch(signOutUserStart());
 			const res = await fetch(
-				`https://mern-real-estate-903l.onrender.com/api/auth/signout`,
+				`https://mern-real-estate-qb4p.onrender.com/api/auth/signout`,
 				{
 					method: "GET",
 					credentials: "include",
@@ -145,7 +145,7 @@ export default function Profile() {
 		try {
 			setShowListingsError(false);
 			const res = await fetch(
-				`https://mern-real-estate-903l.onrender.com/api/user/listings/${currentUser._id}`,
+				`https://mern-real-estate-qb4p.onrender.com/api/user/listings/${currentUser._id}`,
 				{
 					method: "GET",
 					credentials: "include",
@@ -164,7 +164,7 @@ export default function Profile() {
 	const handleListingDelete = async (listingId) => {
 		try {
 			const res = await fetch(
-				`https://mern-real-estate-903l.onrender.com/api/listing/delete/${listingId}`,
+				`https://mern-real-estate-qb4p.onrender.com/api/listing/delete/${listingId}`,
 				{
 					method: "DELETE",
 					credentials: "include",

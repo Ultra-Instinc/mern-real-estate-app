@@ -29,7 +29,7 @@ export default function Listing() {
 			try {
 				setLoading(true);
 				const res = await fetch(
-					`https://mern-real-estate-903l.onrender.com/api/listing/get/${params.listingId}`,
+					`https://mern-real-estate-qb4p.onrender.com/api/listing/get/${params.listingId}`,
 					{
 						method: "GET",
 						credentials: "include",

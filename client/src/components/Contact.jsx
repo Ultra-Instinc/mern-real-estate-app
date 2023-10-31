@@ -8,7 +8,7 @@ export default function Contact({ listing }) {
 		const fetchLandlord = async () => {
 			try {
 				const res = await fetch(
-					`https://mern-real-estate-903l.onrender.com/api/user/${listing.userRef}`,
+					`https://mern-real-estate-qb4p.onrender.com/api/user/${listing.userRef}`,
 					{
 						method: "GET",
 						credentials: "include",

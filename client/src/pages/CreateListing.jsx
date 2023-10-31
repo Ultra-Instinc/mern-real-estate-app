@@ -131,7 +131,7 @@ export default function CreateListing() {
 			setLoading(true);
 			setError(false);
 			const res = await fetch(
-				`https://mern-real-estate-903l.onrender.com/api/listing/create`,
+				`https://mern-real-estate-qb4p.onrender.com/api/listing/create`,
 				{
 					method: "POST",
 					headers: {
