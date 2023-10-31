@@ -23,7 +23,10 @@ app.use(cookieParser());
 // allow us to tell the broser to save our cookies on this origin
 app.use(
 	cors({
-		origin: "http://localhost:5173",
+		origin: [
+			"https://mern-real-estate-903l.onrender.com",
+			"http://localhost:5173",
+		],
 		credentials: true,
 	})
 );

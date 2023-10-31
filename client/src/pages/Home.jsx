@@ -17,9 +17,7 @@ export default function Home() {
 		const fetchOfferListings = async () => {
 			try {
 				const res = await fetch(
-					`http://localhost:${
-						import.meta.env.VITE_FIREBASE_PORT
-					}/api/listing/get?offer=true&limit=4`
+					`https://mern-real-estate-903l.onrender.com/api/listing/get?offer=true&limit=4`
 				);
 				const data = await res.json();
 				setOfferListings(data);
@@ -29,9 +27,7 @@ export default function Home() {
 		const fetchRentListings = async () => {
 			try {
 				const res = await fetch(
-					`http://localhost:${
-						import.meta.env.VITE_FIREBASE_PORT
-					}/api/listing/get?type=rent&limit=4`
+					`https://mern-real-estate-903l.onrender.com/api/listing/get?type=rent&limit=4`
 				);
 				const data = await res.json();
 				setRentListings(data);
@@ -41,9 +37,7 @@ export default function Home() {
 		const fetchSalesListings = async () => {
 			try {
 				const res = await fetch(
-					`http://localhost:${
-						import.meta.env.VITE_FIREBASE_PORT
-					}/api/listing/get?type=sale&limit=4`
+					`https://mern-real-estate-903l.onrender.com/api/listing/get?type=sale&limit=4`
 				);
 				const data = await res.json();
 				setSalesListings(data);
