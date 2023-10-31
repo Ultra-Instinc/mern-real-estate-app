@@ -12,7 +12,7 @@ export default function SignUp() {
 	});
 	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(false);
-	const { currentUser } = useSelector((state) => state.user);
+	const { currentUser } = useSelector((state) => state?.user);
 
 	const handleInputChange = (e) => {
 		setFormData({ ...formdata, [e.target.id]: e.target.value });
@@ -21,13 +21,18 @@ export default function SignUp() {
 		e.preventDefault();
 		try {
 			setLoading(true);
-			const res = await fetch("http://localhost:3000/api/auth/signup", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(formdata),
-			});
+			const res = await fetch(
+				`http://localhost:${
+					import.meta.env.VITE_FIREBASE_PORT
+				}/api/auth/signup`,
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(formdata),
+				}
+			);
 			const data = await res.json();
 			if (data.success === false) {
 				setLoading(false);

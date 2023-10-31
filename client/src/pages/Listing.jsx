@@ -29,7 +29,9 @@ export default function Listing() {
 			try {
 				setLoading(true);
 				const res = await fetch(
-					`http://localhost:3000/api/listing/get/${params.listingId}`,
+					`http://localhost:${
+						import.meta.env.VITE_FIREBASE_PORT
+					}/api/listing/get/${params.listingId}`,
 					{
 						method: "GET",
 						credentials: "include",

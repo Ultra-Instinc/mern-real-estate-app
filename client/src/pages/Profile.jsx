@@ -79,7 +79,9 @@ export default function Profile() {
 		try {
 			dispatch(updateUserStart());
 			const res = await fetch(
-				`http://localhost:3000/api/user/update/${currentUser._id}`,
+				`http://localhost:${
+					import.meta.env.VITE_FIREBASE_PORT
+				}/api/user/update/${currentUser._id}`,
 				{
 					method: "POST",
 					credentials: "include",
@@ -105,7 +107,9 @@ export default function Profile() {
 		try {
 			dispatch(deleteUserStart());
 			const res = await fetch(
-				`http://localhost:3000/api/user/delete/${currentUser._id}`,
+				`http://localhost:${
+					import.meta.env.VITE_FIREBASE_PORT
+				}/api/user/delete/${currentUser._id}`,
 				{
 					method: "DELETE",
 					credentials: "include",
@@ -124,10 +128,15 @@ export default function Profile() {
 	const handleSignOut = async () => {
 		try {
 			dispatch(signOutUserStart());
-			const res = await fetch(`http://localhost:3000/api/auth/signout`, {
-				method: "GET",
-				credentials: "include",
-			});
+			const res = await fetch(
+				`http://localhost:${
+					import.meta.env.VITE_FIREBASE_PORT
+				}/api/auth/signout`,
+				{
+					method: "GET",
+					credentials: "include",
+				}
+			);
 			const data = await res.json();
 			if (data.success === false) {
 				dispatch(signOutUserFailure(data.message));
@@ -142,7 +151,9 @@ export default function Profile() {
 		try {
 			setShowListingsError(false);
 			const res = await fetch(
-				`http://localhost:3000/api/user/listings/${currentUser._id}`,
+				`http://localhost:${
+					import.meta.env.VITE_FIREBASE_PORT
+				}/api/user/listings/${currentUser._id}`,
 				{
 					method: "GET",
 					credentials: "include",
@@ -161,7 +172,9 @@ export default function Profile() {
 	const handleListingDelete = async (listingId) => {
 		try {
 			const res = await fetch(
-				`http://localhost:3000/api/listing/delete/${listingId}`,
+				`http://localhost:${
+					import.meta.env.VITE_FIREBASE_PORT
+				}/api/listing/delete/${listingId}`,
 				{
 					method: "DELETE",
 					credentials: "include",

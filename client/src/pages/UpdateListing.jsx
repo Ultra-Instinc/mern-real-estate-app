@@ -36,7 +36,9 @@ export default function UpdateListing() {
 		const fetchListing = async () => {
 			const listingId = params.listingId;
 			const res = await fetch(
-				`http://localhost:3000/api/listing/get/${listingId}`,
+				`http://localhost:${
+					import.meta.env.VITE_FIREBASE_PORT
+				}/api/listing/get/${listingId}`,
 				{
 					method: "GET",
 					credentials: "include",
@@ -150,7 +152,9 @@ export default function UpdateListing() {
 			setLoading(true);
 			setError(false);
 			const res = await fetch(
-				`http://localhost:3000/api/listing/update/${params.listingId}`,
+				`http://localhost:${
+					import.meta.env.VITE_FIREBASE_PORT
+				}/api/listing/update/${params.listingId}`,
 				{
 					method: "POST",
 					headers: {

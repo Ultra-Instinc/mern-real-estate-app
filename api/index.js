@@ -8,7 +8,7 @@ import userRouter from "./routes/user_route.js";
 import authRouter from "./routes/auth_route.js";
 import listingRouter from "./routes/listing_route.js";
 dotenv.config();
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 mongoose
 	.connect(process.env.MONGO_STRING)
 	.then(() => console.log("Connected to MongoDB"))

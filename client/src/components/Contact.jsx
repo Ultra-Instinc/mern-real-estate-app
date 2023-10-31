@@ -8,7 +8,9 @@ export default function Contact({ listing }) {
 		const fetchLandlord = async () => {
 			try {
 				const res = await fetch(
-					`http://localhost:3000/api/user/${listing.userRef}`,
+					`http://localhost:${import.meta.env.VITE_FIREBASE_PORT}/api/user/${
+						listing.userRef
+					}`,
 					{
 						method: "GET",
 						credentials: "include",

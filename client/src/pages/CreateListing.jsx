@@ -130,17 +130,22 @@ export default function CreateListing() {
 				return setError("Discount price must be lower than regular price");
 			setLoading(true);
 			setError(false);
-			const res = await fetch("http://localhost:3000/api/listing/create", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				credentials: "include",
-				body: JSON.stringify({
-					...formData,
-					userRef: currentUser._id,
-				}),
-			});
+			const res = await fetch(
+				`http://localhost:${
+					import.meta.env.VITE_FIREBASE_PORT
+				}/api/listing/create`,
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					credentials: "include",
+					body: JSON.stringify({
+						...formData,
+						userRef: currentUser._id,
+					}),
+				}
+			);
 			const data = await res.json();
 			setLoading(false);
 			if (data.success === false) {

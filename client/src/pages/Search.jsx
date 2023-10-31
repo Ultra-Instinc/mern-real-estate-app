@@ -53,7 +53,9 @@ export default function Search() {
 			setShowMore(false);
 			const searchQuery = urlParams.toString();
 			const res = await fetch(
-				`http://localhost:3000/api/listing/get?${searchQuery}`
+				`http://localhost:${
+					import.meta.env.VITE_FIREBASE_PORT
+				}/api/listing/get?${searchQuery}`
 			);
 			const data = await res.json();
 			if (data.length > 8) {
@@ -123,7 +125,9 @@ export default function Search() {
 		urlParams.set("startIndex", startIndex);
 		const searchQuery = urlParams.toString();
 		const res = await fetch(
-			`http://localhost:3000/api/listing/get?${searchQuery}`
+			`http://localhost:${
+				import.meta.env.VITE_FIREBASE_PORT
+			}/api/listing/get?${searchQuery}`
 		);
 		const data = await res.json();
 		if (data.length < 9) {

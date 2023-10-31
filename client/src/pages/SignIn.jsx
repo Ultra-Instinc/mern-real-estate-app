@@ -23,14 +23,19 @@ export default function SignIn() {
 		e.preventDefault();
 		try {
 			dispatch(signInStart());
-			const res = await fetch("http://localhost:3000/api/auth/signin", {
-				method: "POST",
-				credentials: "include",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(formData),
-			});
+			const res = await fetch(
+				`http://localhost:${
+					import.meta.env.VITE_FIREBASE_PORT
+				}/api/auth/signin`,
+				{
+					method: "POST",
+					credentials: "include",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(formData),
+				}
+			);
 			const data = await res.json();
 			if (data.success === false) {
 				dispatch(signInFailure(data.message));
