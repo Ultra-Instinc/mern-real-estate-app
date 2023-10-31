@@ -131,9 +131,7 @@ export default function CreateListing() {
 			setLoading(true);
 			setError(false);
 			const res = await fetch(
-				`http://localhost:${
-					import.meta.env.VITE_FIREBASE_PORT
-				}/api/listing/create`,
+				`https://mern-real-estate-903l.onrender.com/api/listing/create`,
 				{
 					method: "POST",
 					headers: {

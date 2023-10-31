@@ -22,9 +22,7 @@ export default function SignUp() {
 		try {
 			setLoading(true);
 			const res = await fetch(
-				`http://localhost:${
-					import.meta.env.VITE_FIREBASE_PORT
-				}/api/auth/signup`,
+				`https://mern-real-estate-903l.onrender.com/api/auth/signup`,
 				{
 					method: "POST",
 					headers: {

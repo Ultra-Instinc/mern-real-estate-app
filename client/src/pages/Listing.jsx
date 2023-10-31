@@ -29,9 +29,7 @@ export default function Listing() {
 			try {
 				setLoading(true);
 				const res = await fetch(
-					`http://localhost:${
-						import.meta.env.VITE_FIREBASE_PORT
-					}/api/listing/get/${params.listingId}`,
+					`https://mern-real-estate-903l.onrender.com/api/listing/get/${params.listingId}`,
 					{
 						method: "GET",
 						credentials: "include",
