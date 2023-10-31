@@ -8,6 +8,7 @@ import userRouter from "./routes/user_route.js";
 import authRouter from "./routes/auth_route.js";
 import listingRouter from "./routes/listing_route.js";
 dotenv.config();
+const port = process.env.PORT;
 mongoose
 	.connect(process.env.MONGO_STRING)
 	.then(() => console.log("Connected to MongoDB"))
@@ -45,6 +46,6 @@ app.use(express.static(path.join(__dirname, "/client/dist")));
 app.get("*", (req, res) => {
 	res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
-app.listen(3000, () => {
-	console.log("Express Server on 3000 !!!🎉");
+app.listen(port, () => {
+	console.log(`Express Server on ${port}`);
 });
